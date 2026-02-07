@@ -45,7 +45,7 @@ const Navigation = () => {
             href="#home"
             className="font-display text-2xl font-bold text-gradient"
           >
-            JD
+            IA
           </a>
 
           <div className="hidden md:flex items-center gap-8">
