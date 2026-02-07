@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 45 10% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 45 10% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 45 10% 95%;
+
+    --primary: 38 92% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 45 10% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 38 92% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%), hsl(45 100% 60%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 8%));
+    --shadow-glow: 0 0 60px -15px hsl(38 92% 50% / 0.3);
+    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 45 10% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(38 92% 50% / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(38 92% 50% / 0.4);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}

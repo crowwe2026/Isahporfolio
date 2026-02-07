@@ -1,0 +1,2 @@
+- [x] Update h1 in HeroSection.tsx to "Currently based in the Nigeria, Abuja — open to relocation"
+- [x] Update subtitle p in HeroSection.tsx to "Hello, I am Isah Aruna - WordPress Developer, Cloud Security Analyst, DevOps, Frontend Developer, SEO Analyst, IT Support Expertise."
